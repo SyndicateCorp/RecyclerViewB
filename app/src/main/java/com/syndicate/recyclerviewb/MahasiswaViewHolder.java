@@ -11,7 +11,6 @@ public class MahasiswaViewHolder extends RecyclerView.ViewHolder {
 
     public ImageView _jkImageView;
     public TextView _jkTextView, _jpTextView, _namaTextView, _nimTextView, _noTextView;
-
     public MahasiswaViewHolder(@NonNull View itemView) {
         super(itemView);
 
@@ -21,5 +20,6 @@ public class MahasiswaViewHolder extends RecyclerView.ViewHolder {
         _namaTextView = itemView.findViewById(R.id.namaTextView);
         _nimTextView = itemView.findViewById(R.id.nimTextView);
         _noTextView = itemView.findViewById(R.id.noTextView);
+
     }
 }

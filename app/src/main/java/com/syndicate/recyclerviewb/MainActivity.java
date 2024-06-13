@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton _addButton;
     private RecyclerView _recyclerView1;
+
     private TextView _txtMahasiswaCount;
 
     @Override
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 Gson g = new Gson();
-                List<MahasiswaModel> mahasiswaModelList = g.fromJson(new String(responseBody), new TypeToken<List<MahasiswaModel>>(){}.getType());
+                List<MahasiswaModel> mahasiswaModelList = g.fromJson(new String(responseBody),new TypeToken<List<MahasiswaModel>>(){}.getType());
 
                 RecyclerView.LayoutManager lm = new LinearLayoutManager(MainActivity.this);
                 _recyclerView1.setLayoutManager(lm);
@@ -66,15 +67,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initAddButton() {
-//        _addButton = findViewById(R.id.addButton);
-//        _addButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), AddMahasiswaActivity.class);
-//                startActivity(intent);
-//
-//                loadRecyclerView();
-//            }
-//        });
+        _addButton = findViewById(R.id.addButton);
+
+        _addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddMahasiswaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

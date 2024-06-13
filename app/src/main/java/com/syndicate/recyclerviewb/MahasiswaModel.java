@@ -1,10 +1,9 @@
 package com.syndicate.recyclerviewb;
 
 public class MahasiswaModel {
-    private String NIM, nama, JenisKelamin, JP;
+    private String NIM, Nama, JenisKelamin, JP;
 
-    public MahasiswaModel() {
-    }
+    public MahasiswaModel(){}
 
     public String getNIM() {
         return NIM;
@@ -15,11 +14,11 @@ public class MahasiswaModel {
     }
 
     public String getNama() {
-        return nama;
+        return Nama;
     }
 
     public void setNama(String nama) {
-        this.nama = nama;
+        Nama = nama;
     }
 
     public String getJenisKelamin() {

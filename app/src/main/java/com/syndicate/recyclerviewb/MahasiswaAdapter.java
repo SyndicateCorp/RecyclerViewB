@@ -1,5 +1,6 @@
 package com.syndicate.recyclerviewb;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaViewHolder> 
     @Override
     public MahasiswaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.list_mahasiswa, parent, false);
+        View v = inflater.inflate(R.layout.list_mahasiswa,parent,false);
         return new MahasiswaViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MahasiswaViewHolder holder, int position) {
-
         int no = position + 1;
         holder._noTextView.setText(no + ".");
 
@@ -37,14 +37,27 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaViewHolder> 
         if (mm.getJenisKelamin().toLowerCase().equals("perempuan")){
             holder._jkImageView.setImageResource(R.drawable.girl);
         }
+
+        holder._nimTextView.setText(mm.getNIM());
+        holder._namaTextView.setText(mm.getNama());
+        holder._jkTextView.setText(mm.getJenisKelamin());
+
         String jp = mm.getJP();
-        jp = jp.substring(0, 2); //hanya mangambil 2 karakter depan
+        jp = jp.substring(0,2);
         holder._jpTextView.setText(jp);
+
+        if (jp.equals("TI")){
+            holder._jpTextView.setBackgroundColor(Color.BLUE);
+        } else if (jp.equals("SI")) {
+            holder._jpTextView.setBackgroundColor(Color.RED);
+        }else {
+            holder._jpTextView.setBackgroundColor(Color.GRAY);
+        }
     }
 
     @Override
     public int getItemCount() {
-        int count = (_mahasiswaModelList != null)? _mahasiswaModelList.size() : 0;
+        int count = (_mahasiswaModelList != null) ? _mahasiswaModelList.size():0;
         return count;
     }
 }
