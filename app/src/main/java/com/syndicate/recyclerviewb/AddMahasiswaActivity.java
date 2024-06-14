@@ -32,7 +32,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mahasiswa);
 
-//        initInputs();
+        initInputs();
         initSaveButtons();
     }
 
