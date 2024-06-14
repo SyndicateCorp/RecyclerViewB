@@ -66,7 +66,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                String url = "https://stmikpontianak.net/011100862/tampilMahasiswa.php" +
+                String url = "https://stmikpontianak.net/011100862/tambahMahasiswa.php" +
                         "?nim=" + nim +
                         "&nama=" + nama +
                         "&jenisKelamin=" + jenisKelamin +
@@ -115,5 +115,14 @@ public class AddMahasiswaActivity extends AppCompatActivity {
     }
 
     private void initInputs() {
+        _alamatEditText = findViewById(R.id.alamatEditText);
+        _jenisKelaminSpinner = findViewById(R.id.jenisKelaminSpinner);
+        _jpSpinner = findViewById(R.id.jpSpinner);
+        _namaEditText = findViewById(R.id.namaEditText);
+        _nimEditText = findViewById(R.id.nimEditText);
+        _statusNikahSpinner = findViewById(R.id.statusNikahSpinner);
+        _tahunMasukEditText = findViewById(R.id.tahunMasukEditText);
+        _tanggalLahirEditText = findViewById(R.id.tanggalLahirEditText);
+        _tempatLahirEditText = findViewById(R.id.tempatLahirEditText);
     }
 }
